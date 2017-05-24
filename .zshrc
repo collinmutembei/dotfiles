@@ -121,6 +121,9 @@ mkcd () {
     cd "$1"
 }
 
+# leo is the swahili word for today
+alias leo="date +'%d.%m.%y'"
+
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
