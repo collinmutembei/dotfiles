@@ -115,6 +115,12 @@ ppend () {
      echo -e "$1 \n$(cat $2)" > $2
 }
 
+# create directory and cd into it
+mkcd () {
+    mkdir "$1"
+    cd "$1"
+}
+
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
