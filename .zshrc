@@ -106,6 +106,7 @@ alias pms="python manage.py shell"
 
 # aliases for common pip commands
 alias preq="pip install -r requirements.txt"
+alias pfrz="pip freeze > requirements.txt"
 
 # aliases for vagrant
 alias v=vagrant
