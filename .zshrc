@@ -7,7 +7,9 @@ export ZSH=/Users/collin/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="lambda-mod-custom"
+# ZSH_THEME="spaceship"
+# ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +53,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git npm osx chucknorris)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,8 +130,18 @@ alias leo="date +'%d.%m.%y'"
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# configure pyenv. Preferred at the bottom of shell config file
-eval "$(pyenv init -)"
 
+# display all terminal colours
+marangi () {
+  for i in {0..255}; do
+      printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"
+  done
+}
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# resolve "No module named virtualenvwrapper" error
+export VIRTUALENVWRAPPER_PYTHON=`which python`
+
+# configure pyenv. Preferred at the bottom of shell config file
+eval "$(pyenv init -)"
