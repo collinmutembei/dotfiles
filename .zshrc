@@ -138,10 +138,19 @@ marangi () {
   done
 }
 
+# read markdown files on commandline --> https://goo.gl/ptJiyn
+mkdown () {
+  pandoc $1 | lynx -stdin
+}
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # resolve "No module named virtualenvwrapper" error
 export VIRTUALENVWRAPPER_PYTHON=`which python`
 
+# location for atom packages under development
+export ATOM_REPOS_HOME="$HOME/.atomdev"
+
 # configure pyenv. Preferred at the bottom of shell config file
 eval "$(pyenv init -)"
+
