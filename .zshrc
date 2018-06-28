@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/collin/.oh-my-zsh
+export ZSH=/Users/houdini/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -62,7 +62,8 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -85,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-fpath=(/usr/local/share/zsh-completions /Users/collin/.oh-my-zsh/plugins/git /Users/collin/.oh-my-zsh/functions /Users/collin/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.0.8/functions)
+fpath=(/usr/local/share/zsh-completions /Users/houdini/.oh-my-zsh/plugins/git /Users/houdini/.oh-my-zsh/functions /Users/houdini/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.3/functions)
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 # configure environment variables
@@ -97,7 +98,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # configure virtualenvwrapper
 export WORKON_HOME=$HOME/Projects/.envs
 export PROJECT_HOME=$HOME/Projects/personal
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # aliases for common django commands
 alias pmr="python manage.py runserver"
@@ -105,6 +106,7 @@ alias pmm="python manage.py migrate"
 alias pmmm="python manage.py makemigrations"
 alias pmt="python manage.py test"
 alias pms="python manage.py shell"
+alias pmc="python manage.py createsuperuser"
 
 # aliases for common pip commands
 alias preq="pip install -r requirements.txt"
@@ -154,3 +156,13 @@ export ATOM_REPOS_HOME="$HOME/.atomdev"
 # configure pyenv. Preferred at the bottom of shell config file
 eval "$(pyenv init -)"
 
+# load rbenv
+eval "$(rbenv init -)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# added by travis gem
+[ -f /Users/houdini/.travis/travis.sh ] && source /Users/houdini/.travis/travis.sh
+export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"
