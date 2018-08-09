@@ -112,6 +112,11 @@ alias pmc="python manage.py createsuperuser"
 alias preq="pip install -r requirements.txt"
 alias pfrz="pip freeze > requirements.txt"
 
+# remove all pip packages
+toa () {
+    pip freeze | grep -v "^-e" | xargs pip uninstall -y
+}
+
 # aliases for vagrant
 alias v=vagrant
 
