@@ -53,7 +53,7 @@ ZSH_THEME="lambda-mod-custom"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm osx chucknorris)
+plugins=(git npm osx chucknorris pipenv tmux docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -171,3 +171,8 @@ export NVM_DIR="$HOME/.nvm"
 # added by travis gem
 [ -f /Users/houdini/.travis/travis.sh ] && source /Users/houdini/.travis/travis.sh
 export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/houdini/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/houdini/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
