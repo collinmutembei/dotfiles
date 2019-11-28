@@ -53,7 +53,7 @@ ZSH_THEME="lambda-mod-custom"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm osx chucknorris pipenv tmux docker-compose)
+plugins=(git npm osx pipenv tmux docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,8 +89,8 @@ export LC_ALL=en_US.UTF-8
 fpath=(/usr/local/share/zsh-completions /Users/houdini/.oh-my-zsh/plugins/git /Users/houdini/.oh-my-zsh/functions /Users/houdini/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.3/functions)
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
-# configure environment variables
-source ~/.env.sh
+# configure personal environment variables
+source $HOME/.profile
 
 # load packages installed by brew before system packages
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -134,9 +134,6 @@ mkcd () {
 # leo is the swahili word for today
 alias leo="date +'%d.%m.%y'"
 
-# zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 
 # display all terminal colours
 marangi () {
@@ -150,29 +147,11 @@ mkdown () {
   pandoc $1 | lynx -stdin
 }
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# resolve "No module named virtualenvwrapper" error
-export VIRTUALENVWRAPPER_PYTHON=`which python`
-
-# location for atom packages under development
-export ATOM_REPOS_HOME="$HOME/.atomdev"
-
 # configure pyenv. Preferred at the bottom of shell config file
 eval "$(pyenv init -)"
 
 # load rbenv
 eval "$(rbenv init -)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# added by travis gem
-[ -f /Users/houdini/.travis/travis.sh ] && source /Users/houdini/.travis/travis.sh
-export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"
-
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/houdini/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/houdini/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
