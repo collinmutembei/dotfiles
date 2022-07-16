@@ -2,14 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/houdini/.oh-my-zsh
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="lambda-mod-custom"
-# ZSH_THEME="spaceship"
-# ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -44,7 +42,7 @@ ZSH_THEME="lambda-mod-custom"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -53,7 +51,7 @@ ZSH_THEME="lambda-mod-custom"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm osx pipenv tmux docker-compose)
+plugins=(git tmux kubectl zsh-syntax-highlighting zsh-autosuggestions autojump zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,66 +84,12 @@ export LC_ALL=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-fpath=(/usr/local/share/zsh-completions /Users/houdini/.oh-my-zsh/plugins/git /Users/houdini/.oh-my-zsh/functions /Users/houdini/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.3/functions)
-export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 # configure personal environment variables
 source $HOME/.profile
 
 # load packages installed by brew before system packages
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-# configure virtualenvwrapper
-export WORKON_HOME=$HOME/Projects/.envs
-export PROJECT_HOME=$HOME/Projects/personal
-# source /usr/local/bin/virtualenvwrapper.sh
-
-# aliases for common django commands
-alias pmr="python manage.py runserver"
-alias pmm="python manage.py migrate"
-alias pmmm="python manage.py makemigrations"
-alias pmt="python manage.py test"
-alias pms="python manage.py shell"
-alias pmc="python manage.py createsuperuser"
-
-# aliases for common pip commands
-alias preq="pip install -r requirements.txt"
-alias pfrz="pip freeze > requirements.txt"
-
-# remove all pip packages
-toa () {
-    pip freeze | grep -v "^-e" | xargs pip uninstall -y
-}
-
-# aliases for vagrant
-alias v=vagrant
-
-# prepend text into file
-ppend () {
-     echo -e "$1 \n$(cat $2)" > $2
-}
-
-# create directory and cd into it
-mkcd () {
-    mkdir "$1"
-    cd "$1"
-}
-
-# leo is the swahili word for today
-alias leo="date +'%d.%m.%y'"
-
-
-# display all terminal colours
-marangi () {
-  for i in {0..255}; do
-      printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"
-  done
-}
-
-# read markdown files on commandline --> https://goo.gl/ptJiyn
-mkdown () {
-  pandoc $1 | lynx -stdin
-}
 
 # configure pyenv. Preferred at the bottom of shell config file
 eval "$(pyenv init -)"
@@ -154,4 +98,3 @@ eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 
 # heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/houdini/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
