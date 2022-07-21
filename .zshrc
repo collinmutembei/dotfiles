@@ -89,7 +89,7 @@ export LC_ALL=en_US.UTF-8
 source $HOME/.profile
 
 # load packages installed by brew before system packages
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.linuxbrew/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # configure pyenv. Preferred at the bottom of shell config file
 eval "$(pyenv init -)"
@@ -97,4 +97,5 @@ eval "$(pyenv init -)"
 # load rbenv
 eval "$(rbenv init -)"
 
-# heroku autocomplete setup
+# autojump
+[ -f /home/dev/.linuxbrew/etc/profile.d/autojump.sh ] && . /home/dev/.linuxbrew/etc/profile.d/autojump.sh

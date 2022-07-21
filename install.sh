@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# install deps
+brew install nvm rbenv zsh-syntax-highlighting autojump
+
+# clone omz plugins
+git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 create_symlinks() {
     # Get the directory in which this script lives.
