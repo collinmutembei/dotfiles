@@ -91,10 +91,12 @@ source $HOME/.profile
 # load packages installed by brew before system packages
 export PATH=$HOME/.linuxbrew/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
-# configure pyenv. Preferred at the bottom of shell config file
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# load rbenv
+eval "$(pyenv virtualenv-init -)"
+
 eval "$(rbenv init -)"
 
 # autojump
