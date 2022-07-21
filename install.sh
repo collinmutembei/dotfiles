@@ -23,7 +23,7 @@ create_symlinks() {
     done
 
     # Move custom oh-my-zsh theme
-    mv ~/lambda-mod-custom.zsh-theme "${ZSH}/themes"
+    mv ~/.zsh-theme "${ZSH}/themes/lambda-mod-custom.zsh-theme"
 
 }
 
