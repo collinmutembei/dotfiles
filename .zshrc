@@ -88,6 +88,9 @@ export LC_ALL=en_US.UTF-8
 # configure personal environment variables
 source $HOME/.profile
 
+# Initialize ssh with apple-keychain
+ssh-add --apple-load-keychain
+
 # load packages installed by brew before system packages
 export PATH=$HOME/.linuxbrew/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
