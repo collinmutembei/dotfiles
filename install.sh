@@ -23,8 +23,8 @@ create_symlinks() {
         ln -s $script_dir/$name ~/$name
     done
 
-    # link to custom oh-my-zsh theme
-    ln -s ~/.zsh-theme ~/.oh-my-zsh/custom/themes/lambda-mod-custom.zsh-theme
+    # custom oh-my-zsh theme
+    cp $script_dir/lambda-mod-custom.zsh-theme ~/.oh-my-zsh/custom/themes/lambda-mod-custom.zsh-theme
 
 }
 

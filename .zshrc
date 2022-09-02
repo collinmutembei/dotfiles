@@ -104,3 +104,6 @@ eval "$(rbenv init -)"
 
 # autojump
 [ -f /home/dev/.linuxbrew/etc/profile.d/autojump.sh ] && . /home/dev/.linuxbrew/etc/profile.d/autojump.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
