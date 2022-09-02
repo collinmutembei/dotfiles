@@ -4,9 +4,9 @@
 brew install tmux pyenv pyenv-virtualenv nvm rbenv zsh-syntax-highlighting autojump
 
 # clone omz plugins
-git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 create_symlinks() {
     # Get the directory in which this script lives.
@@ -23,8 +23,8 @@ create_symlinks() {
         ln -s $script_dir/$name ~/$name
     done
 
-    # Move custom oh-my-zsh theme
-    mv ~/.zsh-theme ~/.oh-my-zsh/custom/themes/lambda-mod-custom.zsh-theme
+    # link to custom oh-my-zsh theme
+    ln -s ~/.zsh-theme ~/.oh-my-zsh/custom/themes/lambda-mod-custom.zsh-theme
 
 }
 
