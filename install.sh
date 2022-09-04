@@ -3,6 +3,9 @@
 # install deps
 brew install tmux pyenv pyenv-virtualenv nvm rbenv zsh-syntax-highlighting autojump
 
+# tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # clone omz plugins
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
