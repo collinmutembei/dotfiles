@@ -24,7 +24,8 @@ create_symlinks() {
     done
 
     # custom oh-my-zsh theme
-    cp $script_dir/lambda-mod-custom.zsh-theme ~/.oh-my-zsh/custom/themes/lambda-mod-custom.zsh-theme
+    mkdir -p ~/.oh-my-zsh/custom/themes
+    ln -s $script_dir/lambda-mod-custom.zsh-theme ~/.oh-my-zsh/custom/themes/lambda-mod-custom.zsh-theme
 
 }
 
