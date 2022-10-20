@@ -6,6 +6,14 @@ export ZSH_AUTOSUGGEST_USE_ASYNC="enabled"
 # zsh-nvm configuration to load nvmrc automagically
 export NVM_AUTO_USE=true
 
+# gitlab
+export GITLAB_USERNAME=
+export GITLAB_ACCESS_TOKEN=
+export POETRY_HTTP_BASIC_GITLAB_USERNAME=$GITLAB_USERNAME
+export POETRY_HTTP_BASIC_GITLAB_PASSWORD=$GITLAB_ACCESS_TOKEN
+export GITLAB_USER=$GITLAB_USERNAME
+export GITLAB_TOKEN=$GITLAB_ACCESS_TOKEN
+
 # aliases for common django commands
 alias pmr="python manage.py runserver"
 alias pmm="python manage.py migrate"
@@ -34,6 +42,11 @@ mkcd () {
   cd "$1"
 }
 
+# show open ports
+openports () {
+  netstat -an -ptcp | grep LISTEN
+}
+
 # leo is the swahili word for today
 alias leo="date +'%d.%m.%y'"
 
@@ -49,3 +62,4 @@ marangi () {
 mkdown () {
   pandoc $1 | lynx -stdin
 }
+

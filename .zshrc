@@ -51,7 +51,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux kubectl zsh-syntax-highlighting zsh-autosuggestions autojump zsh-nvm)
+plugins=(git tmux kubectl zsh-syntax-highlighting zsh-autosuggestions autojump zsh-nvm docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,4 +106,5 @@ eval "$(rbenv init -)"
 [ -f /home/dev/.linuxbrew/etc/profile.d/autojump.sh ] && . /home/dev/.linuxbrew/etc/profile.d/autojump.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 
