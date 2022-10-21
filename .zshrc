@@ -107,4 +107,6 @@ eval "$(rbenv init -)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# rancher desktop
+export PATH=$HOME/.rd/bin:$PATH
 
