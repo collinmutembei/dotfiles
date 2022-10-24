@@ -63,3 +63,4 @@ mkdown () {
   pandoc $1 | lynx -stdin
 }
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
