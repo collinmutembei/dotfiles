@@ -30,4 +30,3 @@ create_symlinks() {
 }
 
 create_symlinks
-brew bundle
